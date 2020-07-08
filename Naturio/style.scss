@@ -170,7 +170,7 @@ nav {
 }
 /* banner */
 .banner {
-  background-image: url(/img/bg1.jpg);
+  background-image: url("./img/bg1.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: cover;
@@ -533,7 +533,7 @@ nav {
 
 /* callback */
 .callback {
-  background-image: url(/img/asset39.png);
+  background-image: url("./img/asset39.png");
   background-attachment: contain;
   background-repeat: no-repeat;
   padding: 186px 0 130px;
@@ -610,7 +610,7 @@ nav {
 
 /* footer */
 #footer {
-  background-image: url(/img/asset41.png);
+  background-image: url("./img/asset41.png");
   padding: 155px 0 65px;
   .category {
     a:hover {
