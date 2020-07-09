@@ -195,8 +195,9 @@ nav ul {
   position: absolute;
   top: 547px;
   left: 10px;
-  width: 682px;
+  min-width: 682px;
   min-height: 175px;
+  max-height: 350px;
   padding: 20px;
   z-index: 20;
   background-color: #eee;
@@ -231,9 +232,13 @@ nav ul {
   color: #fff;
   padding: 2px 3px;
 }
+.car-info p {
+  padding-left: 30px;
+}
 
 .car-info p::before {
   display: inline-block;
+  
   content: "";
   width: 5px;
   height: 5px;
