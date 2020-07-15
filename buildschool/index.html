@@ -19,14 +19,20 @@
     <link rel="stylesheet" href="./dist/style/style.min.css" />
   </head>
   <body>
+    <a class="messager" href="javascript:;">
+      <img src="./img/asset0.png" alt="messager">
+    </a>
     <header>
       <div class="container">
         <div class="row">
-          <div class="nav-logo col-8 col-md-2">
+          <div class="nav-logo">
             <img src="./img/asset2.png" alt="logo" />
-            <a href="#">Build School</a>
+            <div class="nav-title">
+              <a href="#">Build School</a>
+              <a href="#">developer career builder</a>
+            </div>
           </div>
-          <div class="nav-box col-4 col-md-8">
+          <div class="nav-box ">
             <input type="checkbox" name="hamburger" id="hamburger" />
             <label for="hamburger">
               <span></span>
@@ -433,6 +439,9 @@
         <div class="col-12 col-md-6">
           <p><a href="#">隱私權宣告</a>© 2020 by Build School</p>
         </div>
+        <a href="javascript:;" class="toTop">
+          <img src="./img/asset1.png" alt="toTop">
+        </a>
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -452,7 +461,12 @@
             },
           },
         });
-      });
+        $('.toTop').on('click', function(e) {
+          e.preventDefault();
+          $('html,body').animate({scrollTop:0 },500);
+        })
+      }
+      );
     </script>
   </body>
 </html>
