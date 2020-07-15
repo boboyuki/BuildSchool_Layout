@@ -3,9 +3,49 @@
   &-content {
     width: 100%;
     height: 550px;
+    text-align: center;
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  &-title {
+    h2 {
+      font-size: 72px;
+      font-weight: 400;
+    }
+    p {
+      font-size: 37px;
+    }
+    span {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 5px 20px;
+      font-size: 18px;
+      background-color: #4f7aa4;
+    }
+    
+  }
+  &-group {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 60px;
+  }
+  &-tag {
+    color: #fff;
+    display: inline-block;
+    padding: 15px;
+    letter-spacing: 0.1em;
+    background-color: #3879AE;
+    transition: all .3s;
+    &:hover {
+      background-color: #276BAC;
+    }
   }
 }
 // 組件class
@@ -19,5 +59,49 @@
     margin-right: auto;
     bottom: 10px;
     left:0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .banner {
+    &-title {
+      h2 {
+        font-size: 40px;
+        font-weight: 400;
+      }
+      p {
+        font-size: 28px;
+      }
+      span {
+        margin-top: 20px;
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 20px;
+        display: inline-block;
+        padding: 5px 20px;
+        font-size: 18px;
+        background-color: #4f7aa4;
+      }
+      
+    }
+    &-group {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 300px;
+      margin-top: 60px;
+    }
+    &-tag {
+      color: #fff;
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px 0;
+      letter-spacing: 0.1em;
+      background-color: #3879AE;
+      transition: all .3s;
+      &:hover {
+        background-color: #276BAC;
+      }
+    }
   }
 }
