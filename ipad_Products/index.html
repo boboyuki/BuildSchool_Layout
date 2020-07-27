@@ -337,7 +337,7 @@
         element.addEventListener("click", function (e) {
           let colorNames = this.attributes
           changeSelected("color", colorNames, index)
-          productImg.children[0].setAttribute("src", data.iPad.color[index][colorNames["for"].value].displayValue);
+          productImg.children[0].setAttribute("src", data.iPad.color[index][colorNames["for"].value].displayValueForWifi);
         })
       })
       // storage
@@ -383,11 +383,12 @@
           // colorImg
           let colorType = data["iPad"]["color"]
           colorType.forEach((item, i) => {
+            //color
             if (Object.values(item)[0]["selected"] === true) {
               if (data["iPad"]["wifi"][1]["wifi+net"]["selected"] === true) {
-                productImg.children[0].setAttribute("src", data["iPad"]["wifi"][1]["wifi+net"]["color"][i][Object.keys(item)[0]].displayValue);
+                productImg.children[0].setAttribute("src", data.iPad.color[i][Object.keys(item)[0]].displayValueForCell);
               } else {
-                productImg.children[0].setAttribute("src", data.iPad.color[i][Object.keys(item)[0]].displayValue);
+                productImg.children[0].setAttribute("src", data.iPad.color[i][Object.keys(item)[0]].displayValueForWifi);
               }
             }
           })
@@ -420,17 +421,20 @@
           {
             "space-gray": {
               selected: false,
-              displayValue: "./img/ipad-wifi-select-space.png"
+              displayValueForWifi: "./img/ipad-wifi-select-space.png",
+              displayValueForCell: "./img/ipad-cell-select-space.png"
             }
           }, {
             "silver": {
               selected: false,
-              displayValue: "./img/ipad-wifi-select-silver.png"
+              displayValueForWifi: "./img/ipad-wifi-select-silver.png",
+              displayValueForCell: "./img/ipad-cell-select-silver.png"
             }
           }, {
             "gold": {
               selected: false,
-              displayValue: "./img/ipad-wifi-select-gold.png"
+              displayValueForWifi: "./img/ipad-wifi-select-gold.png",
+              displayValueForCell: "./img/ipad-cell-select-gold.png"
             }
           }
         ],
@@ -455,21 +459,6 @@
             "wifi+net": {
               selected: false,
               addPrice: 4500,
-              color: [
-                {
-                  "space-gray": {
-                    displayValue: "./img/ipad-cell-select-space.png"
-                  }
-                }, {
-                  "silver": {
-                    displayValue: "./img/ipad-cell-select-silver.png"
-                  }
-                }, {
-                  "gold": {
-                    displayValue: "./img/ipad-cell-select-gold.png"
-                  }
-                }
-              ]
             }
           }
         ],
