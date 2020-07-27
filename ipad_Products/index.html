@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    label.btn-outline-primary:hover {
+      background-color: #fff;
+      color: black;
+    }
+
+    input[type="radio"]:checked+label,
+    label.btn-outline-primary:not(:disabled):not(.disabled).active,
+    label.btn-outline-primary:not(:disabled):not(.disabled):active {
+      box-shadow: 0px 0 3px 1px #1c3fdb;
+      background-color: #fff;
+      color: black;
+    }
+
+    label.btn-outline-primary {
+      background-color: #fff;
+      color: black;
+    }
+
+    /* navbar */
+    .nav-item {
+      margin: 0 10px;
+    }
+
+    .navbar-brand img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .navbar-toggler:focus {
+      outline: 0;
+      border: none;
+    }
+
+    .navbar-btn {
+      z-index: 2;
+      top: 50%;
+      right: 15px;
+    }
+
+    span[data-target="#bannerNav"] {
+      width: 30px;
+      height: 30px;
+      font-size: 30px;
+    }
+
+    /* product image */
+    .product-image {
+      top: 20px;
+      left: 0;
+    }
+
+    .product-image img {
+      width: 470px;
+      max-width: 100%;
+    }
+
+    /* carve */
+    #carve span {
+      top: 10px;
+      right: 20px;
+    }
+
+    /* 顯示價格 */
+    .price {
+      padding: 0 30px 20px;
+    }
+
+    .price p {
+      font-size: 40px;
+      font-weight: 700;
+      padding-top: 6px;
+      margin: 0;
+    }
+
+    .price p:nth-of-type(2) {
+      font-size: 14px;
+    }
+
+    .price button {
+      width: 100%;
+    }
+
+    #color img {
+      width: 32px;
+      height: 32px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <div class="row w-100 align-items-center justify-content-between flex-row-reverse flex-lg-row">
+          <a class="navbar-brand m-auto" href="#">
+            <img src="./img/apple.svg" alt="">
+          </a>
+          <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Mac</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">iPad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">iPhone</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Watch</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">TV</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Music</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">支援服務</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="banner">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <div class="row w-100 align-items-center position-relative">
+            <a class="navbar-brand flex-grow-1 ml-3" href="#">
+              <h1>iPad</h1>
+            </a>
+            <button class="navbar-toggler mx-2 border-0" type="button" data-toggle="collapse" data-target="#bannerNav"
+              aria-controls="bannerNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="d-block d-flex justify-content-center align-items-center" aria-hidden="true"
+                data-toggle="collapse" data-target="#bannerNav" aria-controls="bannerNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="bannerNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">產品概覽</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">選iPad的理由</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">技術規格</a>
+                </li>
+            </div>
+            <button type="button" class=" btn btn-primary h-50">購買</button>
+          </div>
+        </div>
+      </nav>
+    </section>
+  </header>
+  <section class="product py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="product-image position-sticky">
+            <img src="./img/ipad-all.jpg" class="d-block m-auto">
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <h2>購買 iPad</h2>
+          <p>購買 iPad 可享免額外付費運送服務。</p>
+          <div class="accordion">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0 d-flex">
+                  <span class="btn btn-block w-75 text-left" data-toggle="collapse" data-target="#color"
+                    aria-expanded="true" aria-controls="color">
+                    外觀
+                  </span>
+                </h2>
+              </div>
+              <div id="color" class="collapse show" aria-labelledby="headingOne">
+                <div class="card-body">
+                  <div class="row justify-content-start m-auto">
+                    <input type="radio" id="space-gray" name="color" value="space-gray" class="d-none">
+                    <label for="space-gray"
+                      class="color-option col-5 col-md-5 d-flex btn btn-outline-primary flex-column justify-content-center align-items-center border py-3 m-2">
+                      <img class="d-inline-block" src="./img/color-spacegray.png" alt="space-gray">
+                      <p>太空灰</p>
+                    </label>
+                    <input type="radio" id="silver" name="color" value="silver" class="d-none">
+                    <label for="silver"
+                      class="color-option col-5 col-md-5 d-flex btn btn-outline-primary flex-column justify-content-center align-items-center border ml-auto py-3 m-2">
+                      <img class="d-inline-block" src="./img/color-silver.png" alt="silver">
+                      <p>銀色</p>
+                    </label>
+                    <input type="radio" id="gold" name="color" value="gold" class="d-none">
+                    <label for="gold"
+                      class="color-option col-5 col-md-5 d-flex btn btn-outline-primary flex-column justify-content-center align-items-center border py-3 m-2">
+                      <img class="d-inline-block" src="./img/color-gold.png" alt="gold">
+                      <p>金色</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0 d-flex">
+                    <span class="btn btn-block w-75 text-left collapsed" data-toggle="collapse" data-target="#storage
+                    " aria-expanded="true" aria-controls="storage
+                      ">
+                      儲存裝置
+                    </span>
+                  </h2>
+                </div>
+                <div id="storage" class="collapse show" aria-labelledby="headingTwo">
+                  <div class="card-body">
+                    <div class="row justify-content-start m-auto">
+                      <input type="radio" id="32GB" name="storage" value="32GB" class="d-none">
+                      <label for="32GB"
+                        class="storage-option col-5 w-100 btn btn-outline-primary h-100 text-center border py-3 m-2">
+                        <p class="font-weight-bold">32GB</p>
+                        <p>NT$10,900元起</p>
+                      </label>
+                      <input type="radio" id="128GB" name="storage" value="128GB" class="d-none">
+                      <label for="128GB"
+                        class="storage-option col-5 w-100 btn btn-outline-primary h-100 text-center border py-3 ml-auto m-2">
+                        <p class="font-weight-bold">128GB</p>
+                        <p>NT$10,900元起</p>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0 d-flex">
+                    <span class="btn btn-block w-75 text-left collapsed" data-toggle="collapse" data-target="#wifi"
+                      aria-expanded="true" aria-controls="wifi">
+                      連線能力
+                    </span>
+
+                  </h2>
+                </div>
+                <div id="wifi" class="collapse show" aria-labelledby="headingThree">
+                  <div class="card-body">
+                    <div class="row justify-content-start m-auto">
+                      <input type="radio" id="only-wifi" name="wifi" value="only-wifi" class="d-none">
+                      <label for="only-wifi"
+                        class="wifi-option col-5 w-100 h-100 btn btn-outline-primary text-center border py-3 m-2">
+                        <p class="font-weight-bold">WiFi</p>
+                        <p>NT$10,900元起</p>
+                      </label>
+                      <input type="radio" id="wifi+net" name="wifi" value="wifi+net" class="d-none">
+                      <label for="wifi+net"
+                        class="wifi-option col-5 w-100 h-100 btn btn-outline-primary text-center border ml-auto py-3 m-2">
+                        <p class="font-weight-bold">WiFi + 行動網路</p>
+                        <p>NT$15,900元起</p>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0 d-flex">
+                    <span class="btn btn-block w-75 text-left collapsed" data-toggle="collapse" data-target="#carve"
+                      aria-expanded="true" aria-controls="carve">
+                      讓你的裝置更具個人風格。
+                    </span>
+                  </h2>
+                </div>
+                <div id="carve" class="collapse show" aria-labelledby="headingThree">
+                  <div class="card-body">
+                    <div class="row justify-content-start m-auto">
+                      <input type="radio" id="carved" name="color" value="carved" class="d-none">
+                      <label for="carved"
+                        class="col-12 w-100 h-100 btn btn-outline-primary border py-3 m-2 position-relative">
+                        <p class="font-weight-bold">加上鐫刻</p>
+                        <p>鐫刻你的姓名、縮寫，或是電話號碼。Apple 獨家提供。</p>
+                        <span class="position-absolute">免費</span>
+                      </label>
+                      <input type="radio" id="notCarved" name="color" value="notCarved" class="d-none">
+                      <label for="notCarved" class="col-12 w-100 h-100 btn btn-outline-primary border py-3 m-2">
+                        <p class="font-weight-bold">不加雷射鐫刻訊息</p>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="price bg-light mt-4">
+              <p>$NT 10,900起</p>
+              <p class="text-secondary">含營業稅和其他法定稅費：約 NT$<span>525</span>。*</p>
+              <a class="d-inline-block mt-2 mb-5" href="javascript:;">
+                最低月付 NT$1,283，12 個月，0% 利率</a>
+              <button type="button" class=" btn btn-primary h-50">購買</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <script>
+    // 選顏色
+    let productImg = document.querySelector('.product-image');
+    let productColors = document.querySelectorAll(".color-option");
+    // 價格
+    let price = document.querySelector(".price p:nth-of-type(1)");
+    let tax = document.querySelector(".price p:nth-of-type(2) span");
+    let installment = document.querySelector(".price a");
+
+    let productStorage = document.querySelectorAll(".storage-option");
+    let productWifi = document.querySelectorAll(".wifi-option");
+    window.addEventListener("DOMContentLoaded", function () {
+      // color
+      productColors.forEach((element, index) => {
+        element.addEventListener("click", function (e) {
+          let colorNames = this.attributes
+          changeSelected("color", colorNames, index)
+          productImg.children[0].setAttribute("src", data.iPad.color[index][colorNames["for"].value].displayValue);
+        })
+      })
+      // storage
+      productStorage.forEach((element, index) => {
+        element.addEventListener("click", function (e) {
+          let storageNames = this.attributes;
+          let initialPrice = data["iPad"]["initialPrice"];
+          let storageAddPrice = data["iPad"]["storage"][index][storageNames.for.value]["addPrice"]
+          let wifiAddPrice = data["iPad"]["wifi"][1]["wifi+net"]["addPrice"]
+          changeSelected("storage", storageNames, index)
+          // sumPrice('storage', index,storageNames)
+          if (data["iPad"]["wifi"][1]["wifi+net"]["selected"] === true) {
+            price.textContent = `$NT ${initialPrice + storageAddPrice + wifiAddPrice}起`
+            tax.textContent = `${Math.round((initialPrice + storageAddPrice + wifiAddPrice) * 0.05)}`
+            installment.textContent = `最低月付 NT${Math.round((initialPrice + storageAddPrice + wifiAddPrice) * 1.05 / 12)}，12 個月，0% 利率`
+          } else {
+            price.textContent = `$NT ${initialPrice + storageAddPrice}起`
+            tax.textContent = `${Math.round((initialPrice + storageAddPrice) * 0.05)}`
+            installment.textContent = `最低月付 NT${Math.round((initialPrice + storageAddPrice) * 1.05 / 12)}，12 個月，0% 利率`
+          }
+        })
+      })
+      // wifi
+      productWifi.forEach((element, index) => {
+        element.addEventListener("click", function (e) {
+          let wifiNames = this.attributes;
+
+          let initialPrice = data["iPad"]["initialPrice"];
+          let storageAddPrice = data["iPad"]["storage"][1]["128GB"]["addPrice"];
+          let wifiAddPrice = data["iPad"]["wifi"][index][wifiNames.for.value]["addPrice"]
+          changeSelected("wifi", wifiNames, index)
+          // sumPrice('wifi', index,wifiNames)
+
+          if (data["iPad"]["storage"][1]["128GB"]["selected"] === true) {
+            price.textContent = `$NT ${initialPrice + storageAddPrice + wifiAddPrice}起`
+            tax.textContent = `${Math.round((initialPrice + storageAddPrice + wifiAddPrice) * 0.05)}`
+            installment.textContent = `最低月付 NT${Math.round((initialPrice + storageAddPrice + wifiAddPrice) * 1.05 / 12)}，12 個月，0% 利率`
+          } else {
+            price.textContent = `$NT ${initialPrice + wifiAddPrice}起`
+            tax.textContent = `${Math.round((initialPrice + wifiAddPrice) * 0.05)}`
+            installment.textContent = `最低月付 NT${Math.round((initialPrice + wifiAddPrice) * 1.05 / 12)}，12 個月，0% 利率`
+          }
+          // colorImg
+          let colorType = data["iPad"]["color"]
+          colorType.forEach((item, i) => {
+            if (Object.values(item)[0]["selected"] === true) {
+              if (data["iPad"]["wifi"][1]["wifi+net"]["selected"] === true) {
+                productImg.children[0].setAttribute("src", data["iPad"]["wifi"][1]["wifi+net"]["color"][i][Object.keys(item)[0]].displayValue);
+              } else {
+                productImg.children[0].setAttribute("src", data.iPad.color[i][Object.keys(item)[0]].displayValue);
+              }
+            }
+          })
+        })
+      })
+    })
+
+
+    function changeSelected(value, attributes, index) {
+      data["iPad"][value][index][attributes.for.value]["selected"] = true;
+      data["iPad"][value].filter(item => Object.keys(item)[0] !== attributes.for.value).forEach(item => Object.values(item)[0]["selected"] = false)
+    }
+    function sumPrice(type, index, typeAttributes) {
+      let initialPrice = data["iPad"]["initialPrice"];
+      let storage128Price = data["iPad"]["storage"][1]["128GB"]["addPrice"];
+      let typeAddPrice = data["iPad"][type][index][typeAttributes.for.value]["addPrice"];
+      console.log("storage", data["iPad"]["storage"][1]["128GB"]["selected"]);
+      if (data["iPad"]["storage"][1]["128GB"]["selected"] === true) {
+        price.textContent = `$NT ${initialPrice + storage128Price + typeAddPrice}起`
+      }
+      price.textContent = `$NT ${initialPrice + typeAddPrice}起`
+    }
+
+  </script>
+  <script>
+    const data = {
+      "iPad": {
+        initialPrice: 10900,
+        color: [
+          {
+            "space-gray": {
+              selected: false,
+              displayValue: "./img/ipad-wifi-select-space.png"
+            }
+          }, {
+            "silver": {
+              selected: false,
+              displayValue: "./img/ipad-wifi-select-silver.png"
+            }
+          }, {
+            "gold": {
+              selected: false,
+              displayValue: "./img/ipad-wifi-select-gold.png"
+            }
+          }
+        ],
+        storage: [{
+          "32GB": {
+            selected: false,
+            addPrice: 0
+          }
+        }, {
+          "128GB": {
+            selected: false,
+            addPrice: 3000
+          }
+        }],
+        wifi: [
+          {
+            "only-wifi": {
+              selected: false,
+              addPrice: 0
+            }
+          }, {
+            "wifi+net": {
+              selected: false,
+              addPrice: 4500,
+              color: [
+                {
+                  "space-gray": {
+                    displayValue: "./img/ipad-cell-select-space.png"
+                  }
+                }, {
+                  "silver": {
+                    displayValue: "./img/ipad-cell-select-silver.png"
+                  }
+                }, {
+                  "gold": {
+                    displayValue: "./img/ipad-cell-select-gold.png"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        carve: false
+      }
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
