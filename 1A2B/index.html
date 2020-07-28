@@ -72,140 +72,151 @@
       </div>
     </div>
     <script>
-      let start = document.querySelector('.btn-group button:nth-child(1)');
-      let reset = document.querySelector('.btn-group button:nth-child(2)');
-      let lookAnswer = document.querySelector('.btn-group button:nth-child(3)');
-      let input = document.querySelector('input.form-control');
-      let checkBtn = document.querySelector('.input-group-append .btn');
-      let history = document.querySelector('.history');
-
-      start.addEventListener('click', function () {
-        start.disabled = true;
-        reset.disabled = false;
-        lookAnswer.disabled = false;
-        input.disabled = false;
-        checkBtn.disabled = false;
-        // 不要讓answer在全域存取
-        let answer = setAnswer();
-        function watchAnswer() {
-          window.alert(`答案是 【${answer}】，請先動腦好嗎再看答案?????`);
-          lookAnswer.removeEventListener('click', watchAnswer, false);
-        }
-        function checkInput() {
-          let reply = input.value.trim();
-          checkAnswer(reply, answer);
-          checkBtn.removeEventListener('click', checkInput, false);
-        }
-        // 放入事件
-        // not work
-        // lookAnswer.removeEventListener('click', watchAnswer, false);
-        // checkBtn.removeEventListener('click', checkInput, false);
-        lookAnswer.addEventListener('click', watchAnswer, false);
-        checkBtn.addEventListener('click', checkInput, false);
-      });
-
-      reset.addEventListener('click', function () {
-        if (window.confirm('確定要重置?')) {
-          start.disabled = false;
-          reset.disabled = true;
-          input.disabled = true;
-          checkBtn.disabled = true;
-          lookAnswer.disabled = true;
-          while (history.firstChild) {
-            history.removeChild(history.firstChild);
+      window.addEventListener('DOMContentLoaded', function () {
+        let start = document.querySelector('.btn-group button:nth-child(1)');
+        let reset = document.querySelector('.btn-group button:nth-child(2)');
+        let lookAnswer = document.querySelector(
+          '.btn-group button:nth-child(3)'
+        );
+        let input = document.querySelector('input.form-control');
+        let checkBtn = document.querySelector('.input-group-append .btn');
+        let history = document.querySelector('.history');
+        function startGame() {
+          turnBeginButton(false);
+          // 不要讓answer在全域存取
+          const answer = setAnswer();
+          //為了能移除事件建立function且要讀取到answer
+          function watchAnswer() {
+            window.alert(`答案是 【${answer}】，請先動腦好嗎再看答案?????`);
           }
-        }
-      });
-
-      input.addEventListener('change', function () {
-        if (isNaN(this.value)) {
-          window.alert('請輸入數字');
-        }
-        if (this.value.length > 4) {
-          window.alert('不要輸入超過四位數字');
-        }
-        if (this.value === '.') {
-          window.alert('不要輸入【.】');
-        }
-      });
-
-      function setAnswer() {
-        let answer = '';
-        while (answer.length < 4) {
-          let number = Math.floor(Math.random(0, 9) * 10);
-          if (answer.length === 0 || !answer.includes(number)) {
-            answer += number;
+          function checkInput() {
+            let reply = input.value.trim();
+            checkAnswer(reply, answer);
           }
-          continue;
-        }
-        return answer;
-      }
-      function checkType(text) {
-        //  是否為數字
-        if (isNaN(text)) {
-          window.alert('請輸入數字');
-          return false;
-        }
-        // 長度
-        if (text.length !== 4) {
-          window.alert('請輸入四位數字');
-          return false;
-        }
-        // 字串長度
-        let filterString = text
-          .split('')
-          .filter((item, index, arr) => arr.indexOf(item) === index);
-        if (filterString.length < 4) {
-          window.alert('不要輸入重複數字');
-          return false;
-        }
-        return true;
-      }
-      function checkAnswer(input, answer) {
-        let A = 0;
-        let B = 0;
-        for (let i = 0; i < input.length; i++) {
-          if (input[i] === answer[i]) {
-            A++;
-          }
-          for (let j = 0; j < answer.length; j++) {
-            if (input[i] === answer[j]) {
-              B++;
+          function resetGame() {
+            if (window.confirm('確定要重置?')) {
+              turnBeginButton(true);
+              // 刪除偵聽
+              lookAnswer.removeEventListener('click', watchAnswer, false);
+              checkBtn.removeEventListener('click', checkInput, false);
+              // 移出 click 事件
+              reset.removeEventListener('click', resetGame);
+              // 刪除history
+              input.value = '';
+              while (history.firstChild) {
+                history.removeChild(history.firstChild);
+              }
             }
           }
+          // 放入事件
+          // not work
+          // lookAnswer.removeEventListener('click', watchAnswer, false);
+          // checkBtn.removeEventListener('click', checkInput, false);
+          // reset.removeEventListener('click', resetGame);
+          lookAnswer.addEventListener('click', watchAnswer, false);
+          checkBtn.addEventListener('click', checkInput, false);
+          reset.addEventListener('click', resetGame);
         }
-        B -= A;
-        // 判斷輸入正確，就建立紀錄
-        if (checkType(input) === true) {
-          createHistory(A, B);
-        }
-        if (A === 4) {
-          window.alert('恭喜猜對，請按重來!!');
-        }
-      }
 
-      function createHistory(a, b) {
-        // 建立元素
-        let record = document.createElement('li');
-        let badge = document.createElement('span');
-        let p = document.createElement('p');
-        history.appendChild(record);
+        start.addEventListener('click', startGame);
 
-        record.appendChild(badge);
-        record.appendChild(p);
-        // 加入文字
-        badge.textContent = `${a}A${b}B`;
-        p.textContent = input.value;
-        // 加入class
-        record.classList.add('list-group-item');
-        badge.classList.add('badge');
-        badge.classList.add('badge-pill');
-        badge.classList.add('badge-danger');
-        p.classList.add('d-inline-block');
-        if (a === 4) {
-          badge.classList.replace('badge-danger', 'badge-success');
+        input.addEventListener('change', function () {
+          if (isNaN(this.value)) {
+            window.alert('請輸入數字');
+          }
+          if (this.value.length > 4) {
+            window.alert('不要輸入超過四位數字');
+          }
+          if (this.value === '.') {
+            window.alert('不要輸入【.】');
+          }
+        });
+
+        function turnBeginButton(beginBool) {
+          start.disabled = !beginBool;
+          reset.disabled = beginBool;
+          lookAnswer.disabled = beginBool;
+          input.disabled = beginBool;
+          checkBtn.disabled = beginBool;
         }
-      }
+        function setAnswer() {
+          let answer = '';
+          while (answer.length < 4) {
+            let number = Math.floor(Math.random(0, 9) * 10);
+            if (answer.length === 0 || !answer.includes(number)) {
+              answer += number;
+            }
+            continue;
+          }
+          return answer;
+        }
+        function checkType(text) {
+          //  是否為數字
+          if (isNaN(text)) {
+            window.alert('請輸入數字');
+            return false;
+          }
+          // 長度
+          if (text.length !== 4) {
+            window.alert('請輸入四位數字');
+            return false;
+          }
+          // 字串長度
+          let filterString = text
+            .split('')
+            .filter((item, index, arr) => arr.indexOf(item) === index);
+          if (filterString.length < 4) {
+            window.alert('不要輸入重複數字');
+            return false;
+          }
+          return true;
+        }
+        function checkAnswer(input, answer) {
+          let A = 0;
+          let B = 0;
+          for (let i = 0; i < input.length; i++) {
+            if (input[i] === answer[i]) {
+              A++;
+            }
+            for (let j = 0; j < answer.length; j++) {
+              if (input[i] === answer[j]) {
+                B++;
+              }
+            }
+          }
+          B -= A;
+          // 判斷輸入正確，就建立紀錄
+          if (checkType(input) === true) {
+            createHistory(A, B);
+          }
+          if (A === 4) {
+            window.alert('恭喜猜對，請按重來!!');
+          }
+        }
+
+        function createHistory(a, b) {
+          // 建立元素
+          let record = document.createElement('li');
+          let badge = document.createElement('span');
+          let p = document.createElement('p');
+          history.appendChild(record);
+
+          record.appendChild(badge);
+          record.appendChild(p);
+          // 加入文字
+          badge.textContent = `${a}A${b}B`;
+          p.textContent = input.value;
+          // 加入class
+          record.classList.add('list-group-item');
+          badge.classList.add('badge');
+          badge.classList.add('badge-pill');
+          badge.classList.add('badge-danger');
+          p.classList.add('d-inline-block');
+          if (a === 4) {
+            badge.classList.replace('badge-danger', 'badge-success');
+          }
+        }
+      });
     </script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
