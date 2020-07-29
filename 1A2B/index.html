@@ -120,18 +120,6 @@
 
         start.addEventListener('click', startGame);
 
-        input.addEventListener('change', function () {
-          if (isNaN(this.value)) {
-            window.alert('請輸入數字');
-          }
-          if (this.value.length > 4) {
-            window.alert('不要輸入超過四位數字');
-          }
-          if (this.value === '.') {
-            window.alert('不要輸入【.】');
-          }
-        });
-
         function turnBeginButton(beginBool) {
           start.disabled = !beginBool;
           reset.disabled = beginBool;
