@@ -1,0 +1,24 @@
+[submodule "buildSchool_Naturio_layout"]
+	path = buildSchool_Naturio_layout
+	url = https://github.com/boboyuki/buildSchool_Naturio_layout.git
+[submodule "BuildSchool_TakenWebSite_Layout"]
+	path = BuildSchool_TakenWebSite_Layout
+	url = https://github.com/boboyuki/BuildSchool_TakenWebSite_Layout.git
+[submodule "BuildSchool_BuildSchool_Layout"]
+	path = BuildSchool_BuildSchool_Layout
+	url = https://github.com/boboyuki/BuildSchool_BuildSchool_Layout.git
+[submodule "BuildSchool_ToyataCard"]
+	path = BuildSchool_ToyataCard
+	url = https://github.com/boboyuki/BuildSchool_ToyataCard.git
+[submodule "buildSchool_CatWeb_Layout"]
+	path = buildSchool_CatWeb_Layout
+	url = https://github.com/boboyuki/buildSchool_CatWeb_Layout.git
+[submodule "BuildSchool_1A2B"]
+	path = BuildSchool_1A2B
+	url = https://github.com/boboyuki/BuildSchool_1A2B.git
+[submodule "BuildSchool_ApplePage"]
+	path = BuildSchool_ApplePage
+	url = https://github.com/boboyuki/BuildSchool_ApplePage.git
+[submodule "BuildSchool_Curriculum"]
+	path = BuildSchool_Curriculum
+	url = https://github.com/boboyuki/BuildSchool_Curriculum.git
