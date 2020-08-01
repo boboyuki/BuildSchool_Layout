@@ -22,3 +22,6 @@
 [submodule "BuildSchool_Curriculum"]
 	path = BuildSchool_Curriculum
 	url = https://github.com/boboyuki/BuildSchool_Curriculum.git
+[submodule "BuildSchool_3000CouponMap"]
+	path = BuildSchool_3000CouponMap
+	url = https://github.com/boboyuki/BuildSchool_3000CouponMap.git
