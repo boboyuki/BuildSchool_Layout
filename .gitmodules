@@ -25,3 +25,6 @@
 [submodule "BuildSchool_3000CouponMap"]
 	path = BuildSchool_3000CouponMap
 	url = https://github.com/boboyuki/BuildSchool_3000CouponMap.git
+[submodule "BuildSchool_Calculator"]
+	path = BuildSchool_Calculator
+	url = https://github.com/boboyuki/BuildSchool_Calculator.git
