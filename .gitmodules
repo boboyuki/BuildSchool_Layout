@@ -28,3 +28,6 @@
 [submodule "BuildSchool_Calculator"]
 	path = BuildSchool_Calculator
 	url = https://github.com/boboyuki/BuildSchool_Calculator.git
+[submodule "BuildSchool_Calender"]
+	path = BuildSchool_Calender
+	url = https://github.com/boboyuki/BuildSchool_Calender.git
