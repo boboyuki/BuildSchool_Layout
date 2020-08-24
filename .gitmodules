@@ -34,3 +34,6 @@
 [submodule "BuildSchool_PuzzleGame"]
 	path = BuildSchool_PuzzleGame
 	url = https://github.com/boboyuki/BuildSchool_PuzzleGame.git
+[submodule "BuildSchool_ChartjsPractice"]
+	path = BuildSchool_ChartjsPractice
+	url = https://github.com/boboyuki/BuildSchool_ChartjsPractice.git
