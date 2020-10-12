@@ -4,80 +4,227 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BuildSchool 前端作業</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .sidebar {
+        min-height: 100vh;
+      }
+      .element-item {
+        width: 220px;
+        min-height: 250px;
+        background-color: #f5f5f5;
+        border: 1px solid #7c7979;
+        margin-bottom: 15px;
+        transition: all .3s;
+      }
+      .element-item:hover{
+        box-shadow: 0px 0px 20px 5px rgba(124, 121, 121,0.3);
+      }
+      .box {
+        padding: 5px;
+        width: 100%;
+      }
+      .box a {
+        color: #7c7979;
+        text-decoration: none;
+      }
+      .box a:hover {
+        color: #414141;
+      }
+      img {
+        width: 100%;
+        height: 125px;
+      }
+      button.btn-dark:hover {
+        background-color: #f5f5f5;
+        color: #414141;
+      }
+    </style>
   </head>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h1,
-    h2 {
-      width: 50%;
-      margin: auto;
-      text-align: start;
-    }
-
-    ul {
-      text-align: start;
-      width: 50%;
-      margin: auto;
-    }
-
-    ul a {
-      text-decoration: none;
-    }
-  </style>
-
   <body>
-    <div class="container">
-      <h1>BuildSchool 前端作業</h1>
-      <h2>HTML、CSS</h2>
-      <ul>
-        <li><a href="./BuildSchool_Curriculum/index.html">課表</a></li>
-        <li>
-          <a href="./BuildSchool_CatWeb_Layout/index.html"
-            >Anilove切版(無RWD)</a
-          >
-        </li>
-        <li>
-          <a href="./BuildSchool_Naturio_layout/index.html"
-            >Naturio切版(無RWD)</a
-          >
-        </li>
-        <li>
-          <a href="./BuildSchool_ToyataCard/index.html">Toyota定位練習</a>
-        </li>
-        <li>
-          <a href="./BuildSchool_BuildSchool_Layout/index.html"
-            >BuildSchool切版(有RWD)</a
-          >
-        </li>
-        <li>
-          <a href="./BuildSchool_TakenWebSite_Layout/index.html"
-            >Taken切版(有RWD,Bootstrap)</a
-          >
-        </li>
-      </ul>
-      <h2>JavaScript</h2>
-      <ul>
-        <li>
-          <a href="./BuildSchool_ApplePage/index.html">Apple產品選擇頁</a>
-        </li>
-        <li><a href="./BuildSchool_1A2B/index.html">1A2B小遊戲</a></li>
-        <li><a href="./BuildSchool_3000CouponMap/index.html">三倍券地圖</a></li>
-        <li><a href="./BuildSchool_Calculator/index.html">計算機</a></li>
-        <li><a href="./BuildSchool_Calender/index.html">行事曆</a></li>
-        <li><a href="./BuildSchool_PuzzleGame/index.html">拼圖遊戲</a></li>
-        <li><a href="./BuildSchool_ChartjsPractice/index.html">資料視覺化練習</a></li>
-      </ul>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3 sidebar bg-dark text-white">
+          <h1 class="mb-lg-5">作品集</h1>
+          <div class="button-group filter-button-group nav d-flex flex-column">
+            <button
+              data-filter="*"
+              class="nav-item mb-3 border-bottom btn btn-dark text-left"
+            >
+              全部
+            </button>
+            <button
+              data-filter=".html-css"
+              class="nav-item mb-3 border-bottom btn btn-dark text-left"
+            >
+              HTML / CSS
+            </button>
+            <button
+              data-filter=".javascript"
+              class="nav-item border-bottom btn btn-dark text-left"
+            >
+              JavaScript
+            </button>
+          </div>
+        </div>
+        <div class="col-9 grid mt-3">
+          <div class="element-item html-css">
+            <div class="box">
+              <a href="./BuildSchool_Curriculum/index.html">
+                <img src="img/course.jpg" alt="" srcset="" />
+                <h5 class="text-center py-2">課表</h5>
+                <p>使用HTML table tag 做出課表</p>
+              </a>
+            </div>
+          </div>
+          <div class="element-item html-css">
+            <div class="box">
+              <a href="./BuildSchool_CatWeb_Layout/index.html">
+                <img src="img/anilove.jpg" alt="" srcset="" />
+                <h5 class="text-center py-2">Anilove切版(無RWD)</h5>
+                <p>使用HTML、CSS</p>
+              </a>
+            </div>
+          </div>
+          <div class="element-item html-css">
+            <div class="box">
+              <a href="./BuildSchool_Naturio_layout/index.html">
+                <img src="img/Naturio.jpg" alt="" srcset="" />
+                <h5 class="text-center py-2">Naturio切版(無RWD)</h5>
+                <p>使用HTML、CSS</p></a
+              >
+            </div>
+          </div>
+          <div class="element-item html-css">
+            <div class="box">
+              <a href="./BuildSchool_ToyataCard/index.html">
+                <img src="img/toyota.jpg" alt="" srcset="" />
+                <h5 class="text-center py-2">Toyota定位練習</h5>
+                <p>使用position 定位</p>
+              </a>
+            </div>
+          </div>
+          <div class="element-item html-css">
+            <div class="box">
+              <img src="img/buildschool.jpg" alt="" srcset="" />
+              <a href="./BuildSchool_BuildSchool_Layout/index.h5tml">
+                <p>BuildSchool切版(有RWD)</p>
+                <p>使用 Scss 及輪播套件復刻網頁</p>
+              </a>
+            </div>
+          </div>
+          <div class="element-item html-css">
+            <div class="box">
+              <a href="./BuildSchool_TakenWebSite_Layout/index.html">
+                <img src="img/taken.jpg" alt="" srcset="" />
+                <h5 class="text-center py-2">Taken切版(有RWD,Bootstrap)</h5>
+                <p>使用 Scss 及輪播套件復刻網頁</p>
+              </a>
+            </div>
+          </div>
+          <div class="element-item javascript">
+            <div class="box">
+              <a href="./BuildSchool_ApplePage/index.html">
+                <img src="img/ipad.jpg" alt="" srcset="" />
+                <h5 class="text-center py-2">Apple產品選擇頁</h5>
+                <p>使用bootstrap復刻Apple產品頁面</p>
+              </a>
+            </div>
+          </div>
+          <div class="element-item javascript">
+            <div class="box">
+              <a href="./BuildSchool_1A2B/index.html">
+                <img src="img/1a2b.jpg" alt="" srcset="" />
+                <h5 class="text-center py-2">1A2B小遊戲</h5>
+                <p>使用JavaScript 做出的小遊戲</p>
+              </a>
+            </div>
+          </div>
+          <div class="element-item javascript">
+            <div class="box">
+              <a href="./BuildSchool_3000CouponMap/index.html">
+                <img src="img/3000.jpg" alt="" srcset="" />
+                <h5 class="text-center py-2">三倍券地圖</h5>
+                <p>串接Google 地圖api及政府三倍券OpenData</p>
+              </a>
+            </div>
+          </div>
+          <div class="element-item javascript">
+            <div class="box">
+              
+              <a href="./BuildSchool_Calculator/index.html">
+                <img src="img/calculator.jpg" alt="" srcset="" />
+                <h5 class="text-center py-2">計算機</h5>
+                <p>訓練邏輯計算及利用JavaScript物件存放運算子</p>
+              </a>
+            </div>
+          </div>
+          <div class="element-item javascript">
+            <div class="box">
+              
+              <a href="./BuildSchool_Calender/index.html">
+                <img src="img/calender.jpg" alt="" srcset="" />
+                <h5 class="text-center py-2">行事曆</h5>
+                <p>運用LocalStorage製作</p>
+              </a>
+            </div>
+          </div>
+          <div class="element-item javascript">
+            <div class="box">
+              <a href="./BuildSchool_PuzzleGame/index.html">
+                <img src="img/puzzle.jpg" alt="" srcset="" />
+                <h5 class="text-center py-2">拼圖遊戲</h5>
+                <p>訓練邏輯並使用jQuery套件製作</p>
+              </a>
+            </div>
+          </div>
+          <div class="element-item javascript">
+            <div class="box">
+              
+              <a href="./BuildSchool_ChartjsPractice/index.html"
+                >
+                <img src="img/chartjs.jpg" alt="" srcset="" />
+                <h5 class="text-center py-2">資料視覺化練習</h5>
+                <p>利用前端Chart.js套件製作資料圖表</p>
+                </a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script>
+      var $grid = $('.grid').isotope({
+        itemSelector: '.element-item',
+        masonry: {
+          columnWidth: 250,
+        },
+      });
+      $('.filter-button-group').on('click', 'button', function () {
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+      });
+    </script>
   </body>
 </html>
