@@ -11,22 +11,29 @@
       crossorigin="anonymous"
     />
     <style>
+      h1 {
+        letter-spacing: 5px;
+      }
       .sidebar {
         min-height: 100vh;
+      }
+      .grid {
+        margin: 0 auto;
       }
       .element-item {
         width: 220px;
         min-height: 250px;
         background-color: #f5f5f5;
         border: 1px solid #7c7979;
+        border-radius: 3px;
         margin-bottom: 15px;
-        transition: all .3s;
+        transition: all 0.3s;
       }
-      .element-item:hover{
-        box-shadow: 0px 0px 20px 5px rgba(124, 121, 121,0.3);
+      .element-item:hover {
+        box-shadow: 0px 0px 20px 5px rgba(124, 121, 121, 0.3);
       }
       .box {
-        padding: 5px;
+        padding: 10px;
         width: 100%;
       }
       .box a {
@@ -40,39 +47,85 @@
         width: 100%;
         height: 125px;
       }
-      button.btn-dark:hover {
+      button.btn-dark {
+        padding: 5px 10px;
+        transition: all 0.5s;
+        border-radius: 0px;
+        border-bottom: 1px solid #f5f5f5;
+      }
+      button.btn-dark:hover,
+      button.btn-dark:focus {
         background-color: #f5f5f5;
         color: #414141;
+      }
+      
+      @media screen and (max-width: 768px){
+        .sidebar {
+          min-height: 25px;
+        }
+        h1 {
+          text-align: center;
+        }
+        .element-item {
+          width: 35%;
+        }
+        button.btn-dark {
+          border-bottom: 0px;
+          margin-bottom: 10px;
+        }
+        button.btn-dark + button.btn-dark {
+          border-left: 1px solid #f5f5f5;
+        }
+      }
+      @media screen and (max-width: 576px) {
+        .sidebar {
+          min-height: 25px;
+        }
+        h1 {
+          text-align: center;
+        }
+        .element-item {
+          width: 90vw;
+        }
+        button.btn-dark {
+          border-bottom: 0px;
+          margin-bottom: 10px;
+        }
+        button.btn-dark + button.btn-dark {
+          border-left: 1px solid #f5f5f5;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-3 sidebar bg-dark text-white">
-          <h1 class="mb-lg-5">作品集</h1>
-          <div class="button-group filter-button-group nav d-flex flex-column">
+        <div class="col-lg-3 sidebar bg-dark text-white">
+          <h1 class="mb-lg-3 col-12 py-lg-3">作品集</h1>
+          <div
+            class="button-group filter-button-group nav d-flex flex-lg-column flex-sm-row justify-content-center"
+          >
             <button
               data-filter="*"
-              class="nav-item mb-3 border-bottom btn btn-dark text-left"
+              class="nav-item py-lg-3 btn btn-dark text-left"
             >
               全部
             </button>
             <button
               data-filter=".html-css"
-              class="nav-item mb-3 border-bottom btn btn-dark text-left"
+              class="nav-item py-lg-3 btn btn-dark text-left"
             >
               HTML / CSS
             </button>
             <button
               data-filter=".javascript"
-              class="nav-item border-bottom btn btn-dark text-left"
+              class="nav-item py-lg-3 btn btn-dark text-left"
             >
               JavaScript
             </button>
           </div>
         </div>
-        <div class="col-9 grid mt-3">
+        <div class="col-lg-9 col-12 grid mt-3">
           <div class="element-item html-css">
             <div class="box">
               <a href="./BuildSchool_Curriculum/index.html">
@@ -111,10 +164,9 @@
           </div>
           <div class="element-item html-css">
             <div class="box">
-              
               <a href="./BuildSchool_BuildSchool_Layout/index.h5tml">
                 <img src="img/buildschool.jpg" alt="" srcset="" />
-                <p>BuildSchool切版(有RWD)</p>
+                <h5 class="text-center py-2">BuildSchool切版(有RWD)</h5>
                 <p>使用 Scss 及輪播套件復刻網頁</p>
               </a>
             </div>
@@ -157,7 +209,6 @@
           </div>
           <div class="element-item javascript">
             <div class="box">
-              
               <a href="./BuildSchool_Calculator/index.html">
                 <img src="img/calculator.jpg" alt="" srcset="" />
                 <h5 class="text-center py-2">計算機</h5>
@@ -167,7 +218,6 @@
           </div>
           <div class="element-item javascript">
             <div class="box">
-              
               <a href="./BuildSchool_Calender/index.html">
                 <img src="img/calender.jpg" alt="" srcset="" />
                 <h5 class="text-center py-2">行事曆</h5>
@@ -186,14 +236,11 @@
           </div>
           <div class="element-item javascript">
             <div class="box">
-              
-              <a href="./BuildSchool_ChartjsPractice/index.html"
-                >
+              <a href="./BuildSchool_ChartjsPractice/index.html">
                 <img src="img/chartjs.jpg" alt="" srcset="" />
                 <h5 class="text-center py-2">資料視覺化練習</h5>
                 <p>利用前端Chart.js套件製作資料圖表</p>
-                </a
-              >
+              </a>
             </div>
           </div>
         </div>
